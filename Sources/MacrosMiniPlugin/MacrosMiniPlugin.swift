@@ -15,3 +15,12 @@ public struct StringifyMacro: ExpressionMacro {
     return "(\(argument), \(literal: argument.description))"
   }
 }
+
+import SwiftCompilerPlugin
+
+@main
+struct MacrosMiniPlugin: CompilerPlugin {
+    let providingMacros: [Macro.Type] = [
+        StringifyMacro.self,
+    ]
+}
