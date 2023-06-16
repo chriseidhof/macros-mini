@@ -24,7 +24,9 @@ let package = Package(
             .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
         ]),
         .target(
-            name: "MacrosMini"),
+            name: "MacrosMini", dependencies: [
+                "MacrosMiniPlugin"
+            ]),
         .testTarget(
             name: "MacrosMiniTests",
             dependencies: ["MacrosMini"]),
